@@ -1,7 +1,7 @@
 from flask import Flask, redirect, url_for, session, request, jsonify, render_template, flash
 from markupsafe import Markup
-from flask_apscheduler import APScheduler
-from apscheduler.schedulers.background import BackgroundScheduler
+#from flask_apscheduler import APScheduler
+#from apscheduler.schedulers.background import BackgroundScheduler
 from flask_oauthlib.client import OAuth
 from bson.objectid import ObjectId
 
