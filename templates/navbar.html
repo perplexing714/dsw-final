@@ -19,33 +19,4 @@
     </div>
   </nav>
 
-<div class="header">
-	 <nav class="navbar navbar-expand-sm justify-content-left">
-		<ul class="navbar-nav">
-			<li class="nav-item">
-				<a class="nav-link" href="/">Home</a>
-			</li>
-		<ul class="navbar-nav">
-			{% if logged_in %}
-			<li><p class="nav-link"> Username: {{ session['user_data']['login']}}</p></li>
-			{% endif %}
-			{% if logged_in %}
-			<li class="nav-item">
-				<a class="nav-link" href="/page1.html">Banana on the Wall</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="page2.html">Tyler Satterberg</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="/logout">Logout</a>
-			</li>
-			{% else %}
-			<li class="nav-item">
-				<a class="nav-link" href="/login">Login</a>
-			</li>
-			{% endif %}
-		</li>
-	   </ul>
-	</nav>
-</div>
 
