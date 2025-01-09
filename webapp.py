@@ -13,6 +13,13 @@ import sys
  
 app = Flask(__name__)
 
+db_name = os.environ["MONGO_DBNAME"]
+
+connection_string = os.environ["MONGO_CONNECTION_STRING"]
+client = pymongo.MongoClient(connection_string) 
+
+galleryDB = client[db_name]
+hawkishCR = galleryDB['hawkish']
 app.debug = False #Change this to False for production
 #os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1' #Remove once done debugging
 
@@ -56,6 +63,34 @@ def inject_logged_in():
 @app.route('/')
 def home():
     return render_template('home.html')
+
+@app.route('/createPost', methods=["GET", "POST"])
+def create_post():
+    if "comment" in session: 
+        content = request.form['content']
+        if session["comment"] != content:
+            print("hi2")
+            username = session['user_data']['login']
+            doc = {"User":username, "Message":content }
+            hawkishCR.insert_one(doc)
+            session["comment"] = content 
+        else:
+            posts = ""
+            for doc in hawkishCR.find():
+                posts += Markup("<p>" + str(doc["User"]) + ": " + str(doc["Message"]) + "</p>")
+            return render_template('page1.html', posts=posts)
+    else:
+        print("hi") 
+        content = request.form['content']
+        username = session['user_data']['login']
+        doc = {"User":username, "Message":content }
+        hawkishCR.insert_one(doc)
+        session["comment"] = content 
+    posts = ""
+    for doc in hawkishCR.find():
+        posts += Markup("<p>" + str(doc["User"]) + ": " + str(doc["Message"]) + "</p>")
+    return render_template('page1.html', posts=posts)
+
 
 #redirect to GitHub's OAuth page and confirm callback URL
 @app.route('/login')
