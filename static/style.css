@@ -20,3 +20,13 @@ img {
 	
 }
 
+.card{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.textbox{
+	width: 45%;
+	margin-top: 30px;
+}
+

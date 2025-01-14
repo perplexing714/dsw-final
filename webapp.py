@@ -16,7 +16,7 @@ app = Flask(__name__)
 db_name = os.environ["MONGO_DBNAME"]
 
 connection_string = os.environ["MONGO_CONNECTION_STRING"]
-client = pymongo.MongoClient(connection_string) 
+client = pymongo.MongoClient(connection_string)
 
 galleryDB = client[db_name]
 hawkishCR = galleryDB['hawkish']
@@ -54,7 +54,7 @@ except Exception as e:
     print(e)
 
 #context processors run before templates are rendered and add variable(s) to the template's context
-#context processors must return a dictionary 
+#context processors must return a dictionary
 #this context processor adds the variable logged_in to the conext for all templates
 @app.context_processor
 def inject_logged_in():
@@ -66,26 +66,26 @@ def home():
 
 @app.route('/createPost', methods=["GET", "POST"])
 def create_post():
-    if "comment" in session: 
+    if "comment" in session:
         content = request.form['content']
         if session["comment"] != content:
             print("hi2")
             username = session['user_data']['login']
             doc = {"User":username, "Message":content }
             hawkishCR.insert_one(doc)
-            session["comment"] = content 
+            session["comment"] = content
         else:
             posts = ""
             for doc in hawkishCR.find():
                 posts += Markup("<p>" + str(doc["User"]) + ": " + str(doc["Message"]) + "</p>")
             return render_template('page1.html', posts=posts)
     else:
-        print("hi") 
+        print("hi")
         content = request.form['content']
         username = session['user_data']['login']
         doc = {"User":username, "Message":content }
         hawkishCR.insert_one(doc)
-        session["comment"] = content 
+        session["comment"] = content
     posts = ""
     for doc in hawkishCR.find():
         posts += Markup("<p>" + str(doc["User"]) + ": " + str(doc["Message"]) + "</p>")
@@ -94,7 +94,7 @@ def create_post():
 
 #redirect to GitHub's OAuth page and confirm callback URL
 @app.route('/login')
-def login():   
+def login():  
     return github.authorize(callback=url_for('authorized', _external=True, _scheme='http')) #callback URL must match the pre-configured callback URL
 
 @app.route('/logout')
@@ -127,7 +127,10 @@ def renderPage1():
         user_data_pprint = pprint.pformat(session['user_data'])#format the user data nicely
     else:
         user_data_pprint = '';
-    return render_template('page1.html',dump_user_data=user_data_pprint)
+    posts = ""
+    for doc in hawkishCR.find():
+        posts += Markup("<p>" + str(doc["User"]) + ": " + str(doc["Message"]) + "</p>")
+    return render_template('page1.html', posts=posts)
 
 @app.route('/page2')
 def renderPage2():
