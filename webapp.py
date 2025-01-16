@@ -78,7 +78,7 @@ def create_post():
             posts = ""
             for doc in hawkishCR.find():
                 posts += Markup("<p>" + str(doc["User"]) + ": " + str(doc["Message"]) + "</p>")
-            return render_template('page1.html', posts=posts)
+            return render_template('modern1.html', posts=posts)
     else:
         print("hi")
         content = request.form['content']
@@ -89,7 +89,7 @@ def create_post():
     posts = ""
     for doc in hawkishCR.find():
         posts += Markup("<p>" + str(doc["User"]) + ": " + str(doc["Message"]) + "</p>")
-    return render_template('page1.html', posts=posts)
+    return render_template('modern1.html', posts=posts)
 
 
 #redirect to GitHub's OAuth page and confirm callback URL
@@ -121,8 +121,8 @@ def authorized():
     return render_template('home.html', message=message)
 
 
-@app.route('/page1')
-def renderPage1():
+@app.route('/modern1')
+def renderModern1():
     if 'user_data' in session:
         user_data_pprint = pprint.pformat(session['user_data'])#format the user data nicely
     else:
@@ -132,8 +132,8 @@ def renderPage1():
         posts += Markup("<p>" + str(doc["User"]) + ": " + str(doc["Message"]) + "</p>")
     return render_template('page1.html', posts=posts)
 
-@app.route('/page2')
-def renderPage2():
+@app.route('/ms1')
+def renderMS1():
     return render_template('page2.html')
 
 #the tokengetter is automatically called to check who is logged in.
