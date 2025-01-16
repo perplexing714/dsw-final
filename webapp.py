@@ -20,6 +20,15 @@ client = pymongo.MongoClient(connection_string)
 
 galleryDB = client[db_name]
 hawkishCR = galleryDB['hawkish']
+bananaCR = galleryDB['banana']
+lobsterCR = galleryDB['lobster']
+foxCR = galleryDB['fox']
+weirddudeCR = galleryDB['weirddude']
+flippingCR = galleryDB['flipping']
+walterCR = galleryDB['walter']
+horseCR = galleryDB['horse']
+
+
 app.debug = False #Change this to False for production
 #os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1' #Remove once done debugging
 
@@ -90,6 +99,235 @@ def create_post():
     for doc in hawkishCR.find():
         posts += Markup("<p>" + str(doc["User"]) + ": " + str(doc["Message"]) + "</p>")
     return render_template('modern1.html', posts=posts)
+
+
+
+@app.route('/createPost1', methods=["GET", "POST"])
+def create_post1():
+    if "comment" in session:
+        content = request.form['content']
+        if session["comment"] != content:
+            print("hi2")
+            username = session['user_data']['login']
+            doc1 = {"User":username, "Message":content }
+            bananaCR.insert_one(doc)
+            session["comment"] = content
+        else:
+            posts1 = ""
+            for doc1 in bananaCR.find():
+                posts1 += Markup("<p>" + str(doc1["User"]) + ": " + str(doc1["Message"]) + "</p>")
+            return render_template('modern2.html', posts1=posts1)
+    else:
+        print("hi")
+        content = request.form['content']
+        username = session['user_data']['login']
+        doc1 = {"User":username, "Message":content }
+       bananaCR.insert_one(doc)
+        session["comment"] = content
+    posts1 = ""
+    for doc1 in bananaCR.find():
+        posts1 += Markup("<p>" + str(doc1["User"]) + ": " + str(doc1["Message"]) + "</p>")
+    return render_template('modern2.html', posts1=posts1)
+
+
+
+
+
+
+@app.route('/createPost2', methods=["GET", "POST"])
+def create_post2():
+    if "comment" in session:
+        content = request.form['content']
+        if session["comment"] != content:
+            print("hi2")
+            username = session['user_data']['login']
+            doc2 = {"User":username, "Message":content }
+            lobsterCR.insert_one(doc)
+            session["comment"] = content
+        else:
+            posts2 = ""
+            for doc2 in lobsterCR.find():
+                posts2 += Markup("<p>" + str(doc2["User"]) + ": " + str(doc2["Message"]) + "</p>")
+            return render_template('modern3.html', posts2=posts2)
+    else:
+        print("hi")
+        content = request.form['content']
+        username = session['user_data']['login']
+        doc2 = {"User":username, "Message":content }
+       lobsterCR.insert_one(doc)
+        session["comment"] = content
+    posts2 = ""
+    for doc2 in lobsterCR.find():
+        posts2 += Markup("<p>" + str(doc2["User"]) + ": " + str(doc2["Message"]) + "</p>")
+    return render_template('modern3.html', posts2=posts2)
+
+
+
+
+
+
+@app.route('/createPost3', methods=["GET", "POST"])
+def create_post3():
+    if "comment" in session:
+        content = request.form['content']
+        if session["comment"] != content:
+            print("hi2")
+            username = session['user_data']['login']
+            doc3 = {"User":username, "Message":content }
+            foxCR.insert_one(doc)
+            session["comment"] = content
+        else:
+            posts3 = ""
+            for doc3 in foxCR.find():
+                posts3 += Markup("<p>" + str(doc3["User"]) + ": " + str(doc3["Message"]) + "</p>")
+            return render_template('modern4.html', posts3=posts3)
+    else:
+        print("hi")
+        content = request.form['content']
+        username = session['user_data']['login']
+        doc3 = {"User":username, "Message":content }
+       foxCR.insert_one(doc)
+        session["comment"] = content
+    posts3 = ""
+    for doc3 in foxCR.find():
+        posts3 += Markup("<p>" + str(doc3["User"]) + ": " + str(doc3["Message"]) + "</p>")
+    return render_template('modern4.html', posts3=posts3)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@app.route('/createPost4', methods=["GET", "POST"])
+def create_post4():
+    if "comment" in session:
+        content = request.form['content']
+        if session["comment"] != content:
+            print("hi2")
+            username = session['user_data']['login']
+            doc4 = {"User":username, "Message":content }
+            weirddudeCR.insert_one(doc)
+            session["comment"] = content
+        else:
+            posts4 = ""
+            for doc4 in weirddudeCR.find():
+                posts4 += Markup("<p>" + str(doc4["User"]) + ": " + str(doc4["Message"]) + "</p>")
+            return render_template('modern5.html', posts4=posts4)
+    else:
+        print("hi")
+        content = request.form['content']
+        username = session['user_data']['login']
+        doc4 = {"User":username, "Message":content }
+       weirddudeCR.insert_one(doc)
+        session["comment"] = content
+    posts4 = ""
+    for doc4 in weirddudeCR.find():
+        posts4 += Markup("<p>" + str(doc4["User"]) + ": " + str(doc4["Message"]) + "</p>")
+    return render_template('modern5.html', posts4=posts4)
+
+
+
+
+
+
+
+@app.route('/createPost5', methods=["GET", "POST"])
+def create_post5():
+    if "comment" in session:
+        content = request.form['content']
+        if session["comment"] != content:
+            print("hi2")
+            username = session['user_data']['login']
+            doc5 = {"User":username, "Message":content }
+            horseCR.insert_one(doc)
+            session["comment"] = content
+        else:
+            posts5 = ""
+            for doc5 in horseCR.find():
+                posts5 += Markup("<p>" + str(doc5["User"]) + ": " + str(doc5["Message"]) + "</p>")
+            return render_template('modern6.html', posts5=posts5)
+    else:
+        print("hi")
+        content = request.form['content']
+        username = session['user_data']['login']
+        doc5 = {"User":username, "Message":content }
+       horseCR.insert_one(doc)
+        session["comment"] = content
+    posts5 = ""
+    for doc5 in horseCR.find():
+        posts5 += Markup("<p>" + str(doc5["User"]) + ": " + str(doc5["Message"]) + "</p>")
+    return render_template('modern6.html', posts5=posts5)
+
+
+
+
+
+
+@app.route('/createPost6', methods=["GET", "POST"])
+def create_post6():
+    if "comment" in session:
+        content = request.form['content']
+        if session["comment"] != content:
+            print("hi2")
+            username = session['user_data']['login']
+            doc6 = {"User":username, "Message":content }
+            flippingCR.insert_one(doc)
+            session["comment"] = content
+        else:
+            posts6 = ""
+            for doc6 in flippingCR.find():
+                posts6 += Markup("<p>" + str(doc6["User"]) + ": " + str(doc6["Message"]) + "</p>")
+            return render_template('MS1.html', posts6=posts6)
+    else:
+        print("hi")
+        content = request.form['content']
+        username = session['user_data']['login']
+        doc6 = {"User":username, "Message":content }
+      flippingCR.insert_one(doc)
+        session["comment"] = content
+    posts6 = ""
+    for doc6 in flippingCR.find():
+        posts6 += Markup("<p>" + str(doc6["User"]) + ": " + str(doc6["Message"]) + "</p>")
+    return render_template('MS1.html', posts6=posts6)
+
+
+
+@app.route('/createPost7', methods=["GET", "POST"])
+def create_post7():
+    if "comment" in session:
+        content = request.form['content']
+        if session["comment"] != content:
+            print("hi2")
+            username = session['user_data']['login']
+            doc6 = {"User":username, "Message":content }
+            walterCR.insert_one(doc)
+            session["comment"] = content
+        else:
+            posts7 = ""
+            for doc7 in walterCR.find():
+                posts7 += Markup("<p>" + str(doc6["User"]) + ": " + str(doc6["Message"]) + "</p>")
+            return render_template('MS2.html', posts7=posts7)
+    else:
+        print("hi")
+        content = request.form['content']
+        username = session['user_data']['login']
+        doc7 = {"User":username, "Message":content }
+      walterCR.insert_one(doc)
+        session["comment"] = content
+    posts7 = ""
+    for doc7 in walterCR.find():
+        posts7 += Markup("<p>" + str(doc7["User"]) + ": " + str(doc7["Message"]) + "</p>")
+    return render_template('MS2.html', posts7=posts7)
+
 
 
 #redirect to GitHub's OAuth page and confirm callback URL
