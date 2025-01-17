@@ -25,19 +25,17 @@
               href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a {% if active_page=="pageI" %} class="nav-link active" {% else %} class="nav-link" {% endif %}
-              href="/page1">Page 1</a>
+            <a {% if active_page=="modern1" %} class="nav-link active" {% else %} class="nav-link" {% endif %}
+              href="/modern1">Modern Art</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Help</a>
             <ul class="dropdown-menu">
               <li>
-                <a {% if active_page=="page2" %} class="active dropdown-item" {% else %} class="dropdown-item" {% endif
-                  %} href="/page2">Test 1</a>
+                <a {% if active_page=="MS1" %} class="active dropdown-item" {% else %} class="dropdown-item" {% endif%} href="/MS1">Family</a>
               </li>
               <li>
-                <a {% if active_page=="page3" %} class="active dropdown-item" {% else %} class="dropdown-item" {% endif
-                  %} href="/page3">Test 2</a>
+                <a {% if active_page=="MS2" %} class="active dropdown-item" {% else %} class="dropdown-item" {% endif%} href="/MS2">Test 2</a>
               </li>
             </ul>
           </li>
