@@ -386,7 +386,7 @@ def renderModern6():
     return render_template('modern6.html', posts5=posts5)
  
 @app.route('/MS1')
-def renderModern6():
+def renderMS1():
     if 'user_data' in session:
         user_data_pprint = pprint.pformat(session['user_data'])#format the user data nicely
     else:
@@ -397,7 +397,7 @@ def renderModern6():
     return render_template('MS1.html', posts6=posts6)
 
 @app.route('/MS2')
-def renderModern6():
+def renderMS2():
     if 'user_data' in session:
         user_data_pprint = pprint.pformat(session['user_data'])#format the user data nicely
     else:
