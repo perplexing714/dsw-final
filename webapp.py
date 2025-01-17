@@ -78,7 +78,6 @@ def create_post():
     if "comment" in session:
         content = request.form['content']
         if session["comment"] != content:
-            print("hi2")
             username = session['user_data']['login']
             doc = {"User":username, "Message":content }
             hawkishCR.insert_one(doc)
@@ -89,7 +88,6 @@ def create_post():
                 posts += Markup("<p>" + str(doc["User"]) + ": " + str(doc["Message"]) + "</p>")
             return render_template('modern1.html', posts=posts)
     else:
-        print("hi")
         content = request.form['content']
         username = session['user_data']['login']
         doc = {"User":username, "Message":content }
@@ -107,7 +105,6 @@ def create_post1():
     if "comment" in session:
         content = request.form['content']
         if session["comment"] != content:
-            print("hi2")
             username = session['user_data']['login']
             doc1 = {"User":username, "Message":content }
             bananaCR.insert_one(doc)
@@ -137,7 +134,7 @@ def create_post2():
             print("hi2")
             username = session['user_data']['login']
             doc2 = {"User":username, "Message":content }
-            lobsterCR.insert_one(doc)
+            lobsterCR.insert_one(doc2)
             session["comment"] = content
         else:
             posts2 = ""
@@ -149,7 +146,7 @@ def create_post2():
         content = request.form['content']
         username = session['user_data']['login']
         doc2 = {"User":username, "Message":content }
-        lobsterCR.insert_one(doc)
+        lobsterCR.insert_one(doc2)
         session["comment"] = content
     posts2 = ""
     for doc2 in lobsterCR.find():
@@ -164,7 +161,7 @@ def create_post3():
             print("hi2")
             username = session['user_data']['login']
             doc3 = {"User":username, "Message":content }
-            foxCR.insert_one(doc)
+            foxCR.insert_one(doc3)
             session["comment"] = content
         else:
             posts3 = ""
@@ -176,7 +173,7 @@ def create_post3():
         content = request.form['content']
         username = session['user_data']['login']
         doc3 = {"User":username, "Message":content }
-        foxCR.insert_one(doc)
+        foxCR.insert_one(doc3)
         session["comment"] = content
     posts3 = ""
     for doc3 in foxCR.find():
@@ -191,7 +188,7 @@ def create_post4():
             print("hi2")
             username = session['user_data']['login']
             doc4 = {"User":username, "Message":content }
-            weirddudeCR.insert_one(doc)
+            weirddudeCR.insert_one(doc4)
             session["comment"] = content
         else:
             posts4 = ""
@@ -203,7 +200,7 @@ def create_post4():
         content = request.form['content']
         username = session['user_data']['login']
         doc4 = {"User":username, "Message":content }
-        weirddudeCR.insert_one(doc)
+        weirddudeCR.insert_one(doc4)
         session["comment"] = content
     posts4 = ""
     for doc4 in weirddudeCR.find():
@@ -218,7 +215,7 @@ def create_post5():
             print("hi2")
             username = session['user_data']['login']
             doc5 = {"User":username, "Message":content }
-            horseCR.insert_one(doc)
+            horseCR.insert_one(doc5)
             session["comment"] = content
         else:
             posts5 = ""
@@ -230,7 +227,7 @@ def create_post5():
         content = request.form['content']
         username = session['user_data']['login']
         doc5 = {"User":username, "Message":content }
-        horseCR.insert_one(doc)
+        horseCR.insert_one(doc5)
         session["comment"] = content
     posts5 = ""
     for doc5 in horseCR.find():
@@ -245,7 +242,7 @@ def create_post6():
             print("hi2")
             username = session['user_data']['login']
             doc6 = {"User":username, "Message":content }
-            flippingCR.insert_one(doc)
+            flippingCR.insert_one(doc6)
             session["comment"] = content
         else:
             posts6 = ""
@@ -257,7 +254,7 @@ def create_post6():
         content = request.form['content']
         username = session['user_data']['login']
         doc6 = {"User":username, "Message":content }
-        flippingCR.insert_one(doc)
+        flippingCR.insert_one(doc6)
         session["comment"] = content
     posts6 = ""
     for doc6 in flippingCR.find():
@@ -271,20 +268,20 @@ def create_post7():
         if session["comment"] != content:
             print("hi2")
             username = session['user_data']['login']
-            doc6 = {"User":username, "Message":content }
-            walterCR.insert_one(doc)
+            doc7 = {"User":username, "Message":content }
+            walterCR.insert_one(doc7)
             session["comment"] = content
         else:
             posts7 = ""
             for doc7 in walterCR.find():
-                posts7 += Markup("<p>" + str(doc6["User"]) + ": " + str(doc6["Message"]) + "</p>")
+                posts7 += Markup("<p>" + str(doc7["User"]) + ": " + str(doc7["Message"]) + "</p>")
             return render_template('MS2.html', posts7=posts7)
     else:
         print("hi")
         content = request.form['content']
         username = session['user_data']['login']
         doc7 = {"User":username, "Message":content }
-        walterCR.insert_one(doc)
+        walterCR.insert_one(doc7)
         session["comment"] = content
     posts7 = ""
     for doc7 in walterCR.find():
