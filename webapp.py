@@ -122,7 +122,7 @@ def create_post1():
         content = request.form['content']
         username = session['user_data']['login']
         doc1 = {"User":username, "Message":content }
-       bananaCR.insert_one(doc)
+        bananaCR.insert_one(doc)
         session["comment"] = content
     posts1 = ""
     for doc1 in bananaCR.find():
@@ -154,7 +154,7 @@ def create_post2():
         content = request.form['content']
         username = session['user_data']['login']
         doc2 = {"User":username, "Message":content }
-       lobsterCR.insert_one(doc)
+        lobsterCR.insert_one(doc)
         session["comment"] = content
     posts2 = ""
     for doc2 in lobsterCR.find():
@@ -186,7 +186,7 @@ def create_post3():
         content = request.form['content']
         username = session['user_data']['login']
         doc3 = {"User":username, "Message":content }
-       foxCR.insert_one(doc)
+        foxCR.insert_one(doc)
         session["comment"] = content
     posts3 = ""
     for doc3 in foxCR.find():
@@ -227,7 +227,7 @@ def create_post4():
         content = request.form['content']
         username = session['user_data']['login']
         doc4 = {"User":username, "Message":content }
-       weirddudeCR.insert_one(doc)
+        weirddudeCR.insert_one(doc)
         session["comment"] = content
     posts4 = ""
     for doc4 in weirddudeCR.find():
@@ -260,7 +260,7 @@ def create_post5():
         content = request.form['content']
         username = session['user_data']['login']
         doc5 = {"User":username, "Message":content }
-       horseCR.insert_one(doc)
+        horseCR.insert_one(doc)
         session["comment"] = content
     posts5 = ""
     for doc5 in horseCR.find():
@@ -292,7 +292,7 @@ def create_post6():
         content = request.form['content']
         username = session['user_data']['login']
         doc6 = {"User":username, "Message":content }
-      flippingCR.insert_one(doc)
+        flippingCR.insert_one(doc)
         session["comment"] = content
     posts6 = ""
     for doc6 in flippingCR.find():
@@ -321,7 +321,7 @@ def create_post7():
         content = request.form['content']
         username = session['user_data']['login']
         doc7 = {"User":username, "Message":content }
-      walterCR.insert_one(doc)
+        walterCR.insert_one(doc)
         session["comment"] = content
     posts7 = ""
     for doc7 in walterCR.find():
