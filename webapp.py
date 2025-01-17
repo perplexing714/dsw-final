@@ -362,17 +362,89 @@ def authorized():
 @app.route('/modern1')
 def renderModern1():
     if 'user_data' in session:
-        user_data_pprint = pprint.pformat(session['user_data'])#format the user data nicely
+        user_data_pprint = pprint.pformat(session['user_data'])
     else:
         user_data_pprint = '';
     posts = ""
     for doc in hawkishCR.find():
         posts += Markup("<p>" + str(doc["User"]) + ": " + str(doc["Message"]) + "</p>")
-    return render_template('page1.html', posts=posts)
+    return render_template('modern1.html', posts=posts)
+@app.route('/modern2')
+def renderModern2():
+    if 'user_data' in session:
+        user_data_pprint = pprint.pformat(session['user_data'])
+    else:
+        user_data_pprint = '';
+    posts = ""
+    for doc in bananaCR.find():
+        posts += Markup("<p>" + str(doc["User"]) + ": " + str(doc["Message"]) + "</p>")
+    return render_template('modern2.html', posts1=posts1)
+ 
+@app.route('/modern3')
+def renderModern3():
+    if 'user_data' in session:
+        user_data_pprint = pprint.pformat(session['user_data'])
+    else:
+        user_data_pprint = '';
+    posts = ""
+    for doc in lobsterphoneCR.find():
+        posts += Markup("<p>" + str(doc["User"]) + ": " + str(doc["Message"]) + "</p>")
+    return render_template('modern3.html', posts2=posts2)
+ 
+@app.route('/modern4')
+def renderModern4():
+    if 'user_data' in session:
+        user_data_pprint = pprint.pformat(session['user_data'])
+    else:
+        user_data_pprint = '';
+    posts = ""
+    for doc in eyefoxCR.find():
+        posts += Markup("<p>" + str(doc["User"]) + ": " + str(doc["Message"]) + "</p>")
+    return render_template('modern4.html', posts3=posts3)
+ 
+@app.route('/modern5')
+def renderModern5():
+    if 'user_data' in session:
+        user_data_pprint = pprint.pformat(session['user_data'])
+    else:
+        user_data_pprint = '';
+    posts = ""
+    for doc in weirddudeCR.find():
+        posts += Markup("<p>" + str(doc["User"]) + ": " + str(doc["Message"]) + "</p>")
+    return render_template('modern5.html', posts4=posts4)
+ 
+@app.route('/modern6')
+def renderModern6():
+    if 'user_data' in session:
+        user_data_pprint = pprint.pformat(session['user_data'])
+    else:
+        user_data_pprint = '';
+    posts = ""
+    for doc in horseCR.find():
+        posts += Markup("<p>" + str(doc["User"]) + ": " + str(doc["Message"]) + "</p>")
+    return render_template('modern6.html', posts5=posts5)
+ 
+@app.route('/MS1')
+def renderModern6():
+    if 'user_data' in session:
+        user_data_pprint = pprint.pformat(session['user_data'])#format the user data nicely
+    else:
+        user_data_pprint = '';
+    posts = ""
+    for doc in flippingCR.find():
+        posts += Markup("<p>" + str(doc["User"]) + ": " + str(doc["Message"]) + "</p>")
+    return render_template('MS1.html', posts6=posts6)
 
-@app.route('/ms1')
-def renderMS1():
-    return render_template('page2.html')
+@app.route('/MS2')
+def renderModern6():
+    if 'user_data' in session:
+        user_data_pprint = pprint.pformat(session['user_data'])#format the user data nicely
+    else:
+        user_data_pprint = '';
+    posts = ""
+    for doc in walterCR.find():
+        posts += Markup("<p>" + str(doc["User"]) + ": " + str(doc["Message"]) + "</p>")
+    return render_template('MS2.html', posts7=posts7)
 
 #the tokengetter is automatically called to check who is logged in.
 @github.tokengetter
