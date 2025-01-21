@@ -403,6 +403,28 @@ def renderMS2():
     for doc in walterCR.find():
         posts7 += Markup("<p>" + str(doc["User"]) + ": " + str(doc["Message"]) + "</p>")
     return render_template('MS2.html', posts7=posts7)
+ 
+@app.route('/MS3')
+def renderMS3():
+    if 'user_data' in session:
+        user_data_pprint = pprint.pformat(session['user_data'])#format the user data nicely
+    else:
+        user_data_pprint = '';
+    posts7 = ""
+    for doc in walterCR.find():
+        posts7 += Markup("<p>" + str(doc["User"]) + ": " + str(doc["Message"]) + "</p>")
+    return render_template('MS3.html', posts8=posts8)
+ 
+@app.route('/MS4')
+def renderMS4():
+    if 'user_data' in session:
+        user_data_pprint = pprint.pformat(session['user_data'])#format the user data nicely
+    else:
+        user_data_pprint = '';
+    posts7 = ""
+    for doc in walterCR.find():
+        posts7 += Markup("<p>" + str(doc["User"]) + ": " + str(doc["Message"]) + "</p>")
+    return render_template('MS4.html', posts9=posts9)
 
 #the tokengetter is automatically called to check who is logged in.
 @github.tokengetter
