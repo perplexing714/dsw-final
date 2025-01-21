@@ -24,18 +24,43 @@
             <a {% if active_page=="home" %} class="nav-link active" {% else %} class="nav-link" {% endif %}
               href="/">Home</a>
           </li>
-          <li class="nav-item">
-            <a {% if active_page=="modern1" %} class="nav-link active" {% else %} class="nav-link" {% endif %}
-              href="/modern1">Modern Art</a>
+		  <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Modern and Weird Art</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a {% if active_page=="modern1" %} class="active dropdown-item" {% else %} class="dropdown-item" {% endif%} href="/modern1">Hawkish</a>
+              </li>
+              <li>
+                <a {% if active_page=="modern2" %} class="active dropdown-item" {% else %} class="dropdown-item" {% endif%} href="/modern2">Banana on the Wall</a>
+              </li>
+			  <li>
+                <a {% if active_page=="modern3" %} class="active dropdown-item" {% else %} class="dropdown-item" {% endif%} href="/modern3">Lobster Phone</a>
+              </li>
+			  <li>
+                <a {% if active_page=="modern4" %} class="active dropdown-item" {% else %} class="dropdown-item" {% endif%} href="/modern4">Fox</a>
+              </li>
+			  <li>
+                <a {% if active_page=="modern5" %} class="active dropdown-item" {% else %} class="dropdown-item" {% endif%} href="/modern5">Weird Face</a>
+              </li>
+			  <li>
+                <a {% if active_page=="modern6" %} class="active dropdown-item" {% else %} class="dropdown-item" {% endif%} href="/modern6">Man and Machine</a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Help</a>
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Microsoft Paint</a>
             <ul class="dropdown-menu">
               <li>
                 <a {% if active_page=="MS1" %} class="active dropdown-item" {% else %} class="dropdown-item" {% endif%} href="/MS1">Family</a>
               </li>
               <li>
-                <a {% if active_page=="MS2" %} class="active dropdown-item" {% else %} class="dropdown-item" {% endif%} href="/MS2">Test 2</a>
+                <a {% if active_page=="MS2" %} class="active dropdown-item" {% else %} class="dropdown-item" {% endif%} href="/MS2">Waltergeist</a>
+              </li>
+			  <li>
+                <a {% if active_page=="MS3" %} class="active dropdown-item" {% else %} class="dropdown-item" {% endif%} href="/MS3">Edward</a>
+              </li>
+			  <li>
+                <a {% if active_page=="MS4" %} class="active dropdown-item" {% else %} class="dropdown-item" {% endif%} href="/MS4">Lucy</a>
               </li>
             </ul>
           </li>
