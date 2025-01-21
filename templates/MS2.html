@@ -5,9 +5,9 @@
 	{% extends "layout.html" %}
 {% endif %}
 </header>
-{% set active_page = "MS2" %}
+{% set active_page = "page1" %}
 
-{% block title %}MS2{% endblock %}
+{% block title %}page1{% endblock %}
 
 {% block content %}
 
@@ -18,20 +18,20 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-  <h1>MS Paint Arts</h1>
+  <h1>MSpaint Arts</h1>
 <div class="container-fluid mt-3">
 
 <div class="card" style="width:400px">
   <img class="card-img-top" src="/static/Waltergeist.png" alt="Card image">
   <div class="card-body">
-    <h4 class="card-title">"Waltergeist"</h4>
-	<h5 class="card-text">HI</p>
+    <h4 class="card-title">"The One Who Knocks"</h4>
+	<h5 class="card-text">This piece combines pop culture references and surreal humor, blending the imagery of a Gorgeist with Walter White. Tyler has employed minimalist digital techniques to convey a powerful message. The phrase "I am the one who knocks" coming from "Waltergeist" creates a parody of intensity and absurdity. This piece invites the viewer to reflect on the intersection of cultural phenomena, identity, and the power of visual language in modern memes.</p>
 	<p class="card-text">Made by Tyler Satterberg</p>
   </div>
 </div>
 </div>
 
-<form action="/createPost7" method="POST">
+<form action="/createPost" method="POST">
 <textarea class="form-control textbox" rows="5" id="comment" name="content" placeholder="Talk about the art!" textbox required></textarea>
 <button type="submit" class="btn btn-primary">Submit</button>
 </form>
