@@ -1,9 +1,9 @@
 <header>
-{% if logged_in %}
-	{% extends "loggedinlayout.html" %}
-{% else %}
-	{% extends "layout.html" %}
-{% endif %}
+  {% if logged_in %}
+  {% extends "loggedinlayout.html" %}
+  {% else %}
+  {% extends "layout.html" %}
+  {% endif %}
 </header>
 {% set active_page = "page1" %}
 
@@ -11,39 +11,40 @@
 
 {% block content %}
 
- <head>
+<head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
+
 <body>
   <h1>MSpaint Arts</h1>
-<div class="container-fluid mt-3">
+  <div class="container-fluid mt-3">
 
-<div class="card" style="width:400px">
-  <img class="card-img-top" src="/static/flippingedward2.png" alt="Card image">
-  <div class="card-body">
-    <h4 class="card-title">"Edward"</h4>
-	<h5 class="card-text">This "art" merges a flipping physics scene with MSpaint, creating an absurd work of art. The three Edwards, which are coming out of the "Math Olympiad," emblem nods to his genius in math and physics. The real subjects contrast sharply with the surreal "art". This blend of reality and absurdity creates a playful commentary on academic competition and creativity.</p>
-	<p class="card-text">Made by Tyler Satterberg</p>
+    <div class="card" style="width:400px">
+      <img class="card-img-top" src="/static/flippingedward2.png" alt="Card image">
+      <div class="card-body">
+        <h4 class="card-title">"Edward"</h4>
+        <h5 class="card-text">This "art" merges a flipping physics scene with MSpaint, creating an absurd work of art.
+          The three Edwards, which are coming out of the "Math Olympiad," emblem nods to his genius in math and physics.
+          The real subjects contrast sharply with the surreal "art". This blend of reality and absurdity creates a
+          playful commentary on academic competition and creativity.</p>
+          <p class="card-text">Made by Tyler Satterberg</p>
+      </div>
+    </div>
   </div>
-</div>
-</div>
 
-<form action="/createPost" method="POST">
-<textarea class="form-control textbox" rows="5" id="comment" name="content" placeholder="Talk about the art!" textbox required></textarea>
-<button type="submit" class="btn btn-primary">Submit</button>
-</form>
-<br>
-<<<<<<< HEAD
-<p class="panel"> {{ posts }} </p>
-=======
-<p class="panel"> {{ posts8 }} </p>
->>>>>>> 4c63d3eb671c4f5ee92682beef3fa0748e9c9bb5
+  <form action="/createPost" method="POST">
+    <textarea class="form-control textbox" rows="5" id="comment" name="content" placeholder="Talk about the art!"
+      textbox required></textarea>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <br>
+  <p class="panel"> {{ posts }} </p>
 
 
 
- </body>
+</body>
 
 {% endblock %}
