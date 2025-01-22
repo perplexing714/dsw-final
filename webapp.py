@@ -83,9 +83,9 @@ def create_post():
             hawkishCR.insert_one(doc)
             session["comment"] = content
         else:
-            posts = ""
+            posts = []
             for doc in hawkishCR.find():
-                posts += Markup("<p>" + str(doc["User"]) + ": " + str(doc["Message"]) + "</p>")
+                posts.append(doc)
             return render_template('modern1.html', posts=posts)
     else:
         content = request.form['content']
@@ -93,9 +93,9 @@ def create_post():
         doc = {"User":username, "Message":content }
         hawkishCR.insert_one(doc)
         session["comment"] = content
-    posts = ""
+    posts = []
     for doc in hawkishCR.find():
-        posts += Markup("<p>" + str(doc["User"]) + ": " + str(doc["Message"]) + "</p>")
+        posts.append(doc)
     return render_template('modern1.html', posts=posts)
 
 
@@ -110,9 +110,9 @@ def create_post1():
             bananaCR.insert_one(doc)
             session["comment"] = content
         else:
-            posts1 = ""
+            posts1 = []
             for doc1 in bananaCR.find():
-                posts1 += Markup("<p>" + str(doc1["User"]) + ": " + str(doc1["Message"]) + "</p>")
+                posts1.append(doc1)
             return render_template('modern2.html', posts1=posts1)
     else:
         print("hi")
@@ -121,9 +121,9 @@ def create_post1():
         doc1 = {"User":username, "Message":content }
         bananaCR.insert_one(doc)
         session["comment"] = content
-    posts1 = ""
+    posts1 = []
     for doc1 in bananaCR.find():
-        posts1 += Markup("<p>" + str(doc1["User"]) + ": " + str(doc1["Message"]) + "</p>")
+        posts1.append(doc1)
     return render_template('modern2.html', posts1=posts1)
 
 @app.route('/createPost2', methods=["GET", "POST"])
@@ -137,9 +137,9 @@ def create_post2():
             lobsterCR.insert_one(doc2)
             session["comment"] = content
         else:
-            posts2 = ""
+            posts2 = []
             for doc2 in lobsterCR.find():
-                posts2 += Markup("<p>" + str(doc2["User"]) + ": " + str(doc2["Message"]) + "</p>")
+                posts2.append(doc2)
             return render_template('modern3.html', posts2=posts2)
     else:
         print("hi")
@@ -148,9 +148,9 @@ def create_post2():
         doc2 = {"User":username, "Message":content }
         lobsterCR.insert_one(doc2)
         session["comment"] = content
-    posts2 = ""
+    posts2 = []
     for doc2 in lobsterCR.find():
-        posts2 += Markup("<p>" + str(doc2["User"]) + ": " + str(doc2["Message"]) + "</p>")
+        posts2.append(doc2)
     return render_template('modern3.html', posts2=posts2)
 
 @app.route('/createPost3', methods=["GET", "POST"])
@@ -164,9 +164,9 @@ def create_post3():
             foxCR.insert_one(doc3)
             session["comment"] = content
         else:
-            posts3 = ""
+            posts3 = []
             for doc3 in foxCR.find():
-                posts3 += Markup("<p>" + str(doc3["User"]) + ": " + str(doc3["Message"]) + "</p>")
+                posts3.append(doc3)
             return render_template('modern4.html', posts3=posts3)
     else:
         print("hi")
@@ -175,9 +175,9 @@ def create_post3():
         doc3 = {"User":username, "Message":content }
         foxCR.insert_one(doc3)
         session["comment"] = content
-    posts3 = ""
+    posts3 = []
     for doc3 in foxCR.find():
-        posts3 += Markup("<p>" + str(doc3["User"]) + ": " + str(doc3["Message"]) + "</p>")
+        posts3.append(doc3)
     return render_template('modern4.html', posts3=posts3)
 
 @app.route('/createPost4', methods=["GET", "POST"])
@@ -191,9 +191,9 @@ def create_post4():
             weirddudeCR.insert_one(doc4)
             session["comment"] = content
         else:
-            posts4 = ""
+            posts4 = []
             for doc4 in weirddudeCR.find():
-                posts4 += Markup("<p>" + str(doc4["User"]) + ": " + str(doc4["Message"]) + "</p>")
+                posts4.append(doc4)
             return render_template('modern5.html', posts4=posts4)
     else:
         print("hi")
@@ -202,9 +202,9 @@ def create_post4():
         doc4 = {"User":username, "Message":content }
         weirddudeCR.insert_one(doc4)
         session["comment"] = content
-    posts4 = ""
+    posts4 = []
     for doc4 in weirddudeCR.find():
-        posts4 += Markup("<p>" + str(doc4["User"]) + ": " + str(doc4["Message"]) + "</p>")
+        posts4.append(doc4)
     return render_template('modern5.html', posts4=posts4)
 
 @app.route('/createPost5', methods=["GET", "POST"])
@@ -218,9 +218,9 @@ def create_post5():
             horseCR.insert_one(doc5)
             session["comment"] = content
         else:
-            posts5 = ""
+            posts5 = []
             for doc5 in horseCR.find():
-                posts5 += Markup("<p>" + str(doc5["User"]) + ": " + str(doc5["Message"]) + "</p>")
+                posts5.append(doc5)
             return render_template('modern6.html', posts5=posts5)
     else:
         print("hi")
@@ -229,9 +229,9 @@ def create_post5():
         doc5 = {"User":username, "Message":content }
         horseCR.insert_one(doc5)
         session["comment"] = content
-    posts5 = ""
+    posts5 = []
     for doc5 in horseCR.find():
-        posts5 += Markup("<p>" + str(doc5["User"]) + ": " + str(doc5["Message"]) + "</p>")
+        posts5.append(doc5)
     return render_template('modern6.html', posts5=posts5)
 
 @app.route('/createPost6', methods=["GET", "POST"])
@@ -245,9 +245,9 @@ def create_post6():
             flippingCR.insert_one(doc6)
             session["comment"] = content
         else:
-            posts6 = ""
+            posts6 = []
             for doc6 in flippingCR.find():
-                posts6 += Markup("<p>" + str(doc6["User"]) + ": " + str(doc6["Message"]) + "</p>")
+                posts6.append(doc6)
             return render_template('MS1.html', posts6=posts6)
     else:
         print("hi")
@@ -256,9 +256,9 @@ def create_post6():
         doc6 = {"User":username, "Message":content }
         flippingCR.insert_one(doc6)
         session["comment"] = content
-    posts6 = ""
+    posts6 = []
     for doc6 in flippingCR.find():
-        posts6 += Markup("<p>" + str(doc6["User"]) + ": " + str(doc6["Message"]) + "</p>")
+        posts6.append(doc5)
     return render_template('MS1.html', posts6=posts6)
 
 @app.route('/createPost7', methods=["GET", "POST"])
@@ -272,9 +272,9 @@ def create_post7():
             walterCR.insert_one(doc7)
             session["comment"] = content
         else:
-            posts7 = ""
-            for doc7 in walterCR.find():
-                posts7 += Markup("<p>" + str(doc7["User"]) + ": " + str(doc7["Message"]) + "</p>")
+            posts7 = []
+            for doc7 in  walterCR.find():
+                posts7.append(doc7)
             return render_template('MS2.html', posts7=posts7)
     else:
         print("hi")
@@ -283,9 +283,9 @@ def create_post7():
         doc7 = {"User":username, "Message":content }
         walterCR.insert_one(doc7)
         session["comment"] = content
-    posts7 = ""
+    posts7 = []
     for doc7 in walterCR.find():
-        posts7 += Markup("<p>" + str(doc7["User"]) + ": " + str(doc7["Message"]) + "</p>")
+        posts7.append(doc7)
     return render_template('MS2.html', posts7=posts7)
 
 @app.route('/login')
@@ -345,7 +345,7 @@ def renderModern3():
     else:
         user_data_pprint = '';
     posts2 = ""
-    for doc in lobsterphoneCR.find():
+    for doc in lobsterCR.find():
         posts2 += Markup("<p>" + str(doc["User"]) + ": " + str(doc["Message"]) + "</p>")
     return render_template('modern3.html', posts2=posts2)
  
@@ -356,7 +356,7 @@ def renderModern4():
     else:
         user_data_pprint = '';
     posts3 = ""
-    for doc in eyefoxCR.find():
+    for doc in foxCR.find():
         posts3 += Markup("<p>" + str(doc["User"]) + ": " + str(doc["Message"]) + "</p>")
     return render_template('modern4.html', posts3=posts3)
  
@@ -410,9 +410,9 @@ def renderMS3():
         user_data_pprint = pprint.pformat(session['user_data'])#format the user data nicely
     else:
         user_data_pprint = '';
-    posts7 = ""
+    posts8 = ""
     for doc in walterCR.find():
-        posts7 += Markup("<p>" + str(doc["User"]) + ": " + str(doc["Message"]) + "</p>")
+        posts8 += Markup("<p>" + str(doc["User"]) + ": " + str(doc["Message"]) + "</p>")
     return render_template('MS3.html', posts8=posts8)
  
 @app.route('/MS4')
@@ -421,9 +421,9 @@ def renderMS4():
         user_data_pprint = pprint.pformat(session['user_data'])#format the user data nicely
     else:
         user_data_pprint = '';
-    posts7 = ""
+    posts9 = ""
     for doc in walterCR.find():
-        posts7 += Markup("<p>" + str(doc["User"]) + ": " + str(doc["Message"]) + "</p>")
+        posts9 += Markup("<p>" + str(doc["User"]) + ": " + str(doc["Message"]) + "</p>")
     return render_template('MS4.html', posts9=posts9)
 
 #the tokengetter is automatically called to check who is logged in.

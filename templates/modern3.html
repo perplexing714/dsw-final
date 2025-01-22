@@ -36,7 +36,9 @@
 <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 <br>
-<p class="panel"> {{ posts2 }} </p>
+{% for post in posts2 %}
+<p>{{ post.User }}: {{ post.Message }}</p>
+{% endfor %}
 
 
 
