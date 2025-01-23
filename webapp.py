@@ -31,7 +31,7 @@ edwardCR = galleryDB['edward']
 lucyCR = galleryDB['lucy']
 
 
-app.debug = False #Change this to False for production
+app.debug = True #Change this to False for production
 #os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1' #Remove once done debugging
 
 app.secret_key = os.environ['SECRET_KEY'] #used to sign session cookies
@@ -346,7 +346,7 @@ def create_post9():
 
 @app.route('/login')
 def login():  
-    return github.authorize(callback=url_for('authorized', _external=True, _scheme='http'))
+    return github.authorize(callback=url_for('authorized', _external=True, _scheme='https'))
 
 @app.route('/logout')
 def logout():
