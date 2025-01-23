@@ -109,7 +109,7 @@ def create_post1():
         if session["comment"] != content:
             username = session['user_data']['login']
             doc1 = {"User":username, "Message":content }
-            bananaCR.insert_one(doc)
+            bananaCR.insert_one(doc1)
             session["comment"] = content
         else:
             posts1 = []
