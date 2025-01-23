@@ -133,7 +133,6 @@ def create_post2():
     if "comment" in session:
         content = request.form['content']
         if session["comment"] != content:
-            print("hi2")
             username = session['user_data']['login']
             doc2 = {"User":username, "Message":content }
             lobsterCR.insert_one(doc2)
@@ -144,7 +143,6 @@ def create_post2():
                 posts2.append(doc2)
             return render_template('modern3.html', posts2=posts2)
     else:
-        print("hi")
         content = request.form['content']
         username = session['user_data']['login']
         doc2 = {"User":username, "Message":content }
@@ -160,7 +158,6 @@ def create_post3():
     if "comment" in session:
         content = request.form['content']
         if session["comment"] != content:
-            print("hi2")
             username = session['user_data']['login']
             doc3 = {"User":username, "Message":content }
             foxCR.insert_one(doc3)
@@ -171,7 +168,6 @@ def create_post3():
                 posts3.append(doc3)
             return render_template('modern4.html', posts3=posts3)
     else:
-        print("hi")
         content = request.form['content']
         username = session['user_data']['login']
         doc3 = {"User":username, "Message":content }
@@ -187,7 +183,6 @@ def create_post4():
     if "comment" in session:
         content = request.form['content']
         if session["comment"] != content:
-            print("hi2")
             username = session['user_data']['login']
             doc4 = {"User":username, "Message":content }
             weirddudeCR.insert_one(doc4)
@@ -198,7 +193,6 @@ def create_post4():
                 posts4.append(doc4)
             return render_template('modern5.html', posts4=posts4)
     else:
-        print("hi")
         content = request.form['content']
         username = session['user_data']['login']
         doc4 = {"User":username, "Message":content }
@@ -214,7 +208,6 @@ def create_post5():
     if "comment" in session:
         content = request.form['content']
         if session["comment"] != content:
-            print("hi2")
             username = session['user_data']['login']
             doc5 = {"User":username, "Message":content }
             horseCR.insert_one(doc5)
@@ -225,7 +218,6 @@ def create_post5():
                 posts5.append(doc5)
             return render_template('modern6.html', posts5=posts5)
     else:
-        print("hi")
         content = request.form['content']
         username = session['user_data']['login']
         doc5 = {"User":username, "Message":content }
@@ -241,7 +233,6 @@ def create_post6():
     if "comment" in session:
         content = request.form['content']
         if session["comment"] != content:
-            print("hi2")
             username = session['user_data']['login']
             doc6 = {"User":username, "Message":content }
             flippingCR.insert_one(doc6)
@@ -252,7 +243,6 @@ def create_post6():
                 posts6.append(doc6)
             return render_template('MS1.html', posts6=posts6)
     else:
-        print("hi")
         content = request.form['content']
         username = session['user_data']['login']
         doc6 = {"User":username, "Message":content }
@@ -268,7 +258,6 @@ def create_post7():
     if "comment" in session:
         content = request.form['content']
         if session["comment"] != content:
-            print("hi2")
             username = session['user_data']['login']
             doc7 = {"User":username, "Message":content }
             walterCR.insert_one(doc7)
@@ -279,7 +268,6 @@ def create_post7():
                 posts7.append(doc7)
             return render_template('MS2.html', posts7=posts7)
     else:
-        print("hi")
         content = request.form['content']
         username = session['user_data']['login']
         doc7 = {"User":username, "Message":content }
@@ -295,7 +283,6 @@ def create_post8():
     if "comment" in session:
         content = request.form['content']
         if session["comment"] != content:
-            print("hi2")
             username = session['user_data']['login']
             doc7 = {"User":username, "Message":content }
             edwardCR.insert_one(doc8)
@@ -306,7 +293,6 @@ def create_post8():
                 posts8.append(doc8)
             return render_template('MS3.html', posts8=posts8)
     else:
-        print("hi")
         content = request.form['content']
         username = session['user_data']['login']
         doc8 = {"User":username, "Message":content }
@@ -322,7 +308,6 @@ def create_post9():
     if "comment" in session:
         content = request.form['content']
         if session["comment"] != content:
-            print("hi2")
             username = session['user_data']['login']
             doc9 = {"User":username, "Message":content }
             lucyCR.insert_one(doc9)
@@ -333,7 +318,6 @@ def create_post9():
                 posts9.append(doc9)
             return render_template('MS4.html', posts9=posts9)
     else:
-        print("hi")
         content = request.form['content']
         username = session['user_data']['login']
         doc8 = {"User":username, "Message":content }
