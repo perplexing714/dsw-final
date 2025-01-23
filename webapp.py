@@ -27,6 +27,8 @@ weirddudeCR = galleryDB['weirddude']
 flippingCR = galleryDB['flipping']
 walterCR = galleryDB['walter']
 horseCR = galleryDB['horse']
+edwardCR = galleryDB['edward']
+lucyCR = galleryDB['lucy']
 
 
 app.debug = False #Change this to False for production
@@ -288,6 +290,60 @@ def create_post7():
         posts7.append(doc7)
     return render_template('MS2.html', posts7=posts7)
 
+@app.route('/createPost8', methods=["GET", "POST"])
+def create_post8():
+    if "comment" in session:
+        content = request.form['content']
+        if session["comment"] != content:
+            print("hi2")
+            username = session['user_data']['login']
+            doc7 = {"User":username, "Message":content }
+            edwardCR.insert_one(doc8)
+            session["comment"] = content
+        else:
+            posts8 = []
+            for doc8 in  edwardCR.find():
+                posts8.append(doc8)
+            return render_template('MS3.html', posts8=posts8)
+    else:
+        print("hi")
+        content = request.form['content']
+        username = session['user_data']['login']
+        doc8 = {"User":username, "Message":content }
+        edwardCR.insert_one(doc8)
+        session["comment"] = content
+    posts8 = []
+    for doc8 in edwardCR.find():
+        posts8.append(doc8)
+    return render_template('MS3.html', posts8=posts8)
+
+@app.route('/createPost9', methods=["GET", "POST"])
+def create_post9():
+    if "comment" in session:
+        content = request.form['content']
+        if session["comment"] != content:
+            print("hi2")
+            username = session['user_data']['login']
+            doc9 = {"User":username, "Message":content }
+            lucyCR.insert_one(doc9)
+            session["comment"] = content
+        else:
+            posts9 = []
+            for doc9 in  lucyCR.find():
+                posts9.append(doc9)
+            return render_template('MS4.html', posts9=posts9)
+    else:
+        print("hi")
+        content = request.form['content']
+        username = session['user_data']['login']
+        doc8 = {"User":username, "Message":content }
+        edwardCR.insert_one(doc8)
+        session["comment"] = content
+    posts9 = []
+    for doc9 in lucyCR.find():
+        posts9.append(doc9)
+    return render_template('MS4.html', posts9=posts9)
+
 @app.route('/login')
 def login():  
     return github.authorize(callback=url_for('authorized', _external=True, _scheme='http'))
@@ -375,14 +431,14 @@ def renderMS2():
 @app.route('/MS3')
 def renderMS3():
     posts8 = []
-    for doc8 in walterCR.find():
+    for doc8 in edwardCR.find():
         posts8.append(doc8)
     return render_template('MS3.html', posts8=posts8)
  
 @app.route('/MS4')
 def renderMS4():
     posts9 = []
-    for doc9 in walterCR.find():
+    for doc9 in lucyCR.find():
         posts9.append(doc9)
     return render_template('MS4.html', posts9=posts9)
 
